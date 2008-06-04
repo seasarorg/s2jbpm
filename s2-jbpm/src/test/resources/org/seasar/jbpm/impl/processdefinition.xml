@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process-definition name="HelloProcess">
+  <start-state name="start">
+    <transition to="sayHello"/>
+  </start-state>
+  <task-node name="sayHello">
+    <task name="sayHello">
+      <assignment actor-id="hello-01"/>
+    </task>
+    <transition to="end"/>
+  </task-node>
+  <end-state name="end"/>
+</process-definition>

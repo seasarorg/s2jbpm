@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<!DOCTYPE components PUBLIC
+    "-//SEASAR//DTD S2Container 2.3//EN"
+    "http://www.seasar.org/dtd/components23.dtd">
+<components>
+  <include path="s2jbpm.dicon"/>
+
+  <component class="example.hello.service.impl.JbpmDbHelloServiceImpl"/>
+
+</components>

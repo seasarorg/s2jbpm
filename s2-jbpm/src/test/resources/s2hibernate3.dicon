@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<!DOCTYPE components PUBLIC
+    "-//SEASAR//DTD S2Container//EN"
+    "http://www.seasar.org/dtd/components.dtd">
+<components namespace="s2hibernate">
+  <include path="j2ee.dicon"/>
+
+  <component class="org.seasar.hibernate3.impl.S2SessionFactoryImpl"/>
+
+  <component class="org.seasar.hibernate3.dao.impl.HibernateDaoMetaDataFactoryImpl"/>
+
+  <component name="readOnly" class="org.seasar.hibernate3.interceptor.ReadOnlySessionInterceptor"/>
+
+  <component name="interceptor" 
+      class="org.seasar.hibernate3.dao.interceptors.S2HibernateDaoInterceptor"/>
+
+</components>

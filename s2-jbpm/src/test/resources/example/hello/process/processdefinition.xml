@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process-definition
+    name="HelloProcess"
+    xmlns="urn:jbpm.org:jpdl-3.2">
+
+  <swimlane name="HelloRole">
+    <assignment pooled-actors="hello-01, hello-02"/>
+  </swimlane>
+
+  <start-state name="start">
+    <transition to="setName">
+      <action class="example.hello.process.handler.LogActionHandler"/>
+    </transition>
+  </start-state>
+
+  <task-node name="setName">
+    <event type="node-enter">
+      <action class="example.hello.process.handler.LogActionHandler"/>
+    </event>
+    <task name="setName" swimlane="HelloRole">
+      <controller>
+        <variable name="name" access="write"/>
+      </controller>
+    </task>
+    <event type="node-leave">
+      <action class="example.hello.process.handler.LogActionHandler"/>
+    </event>
+    <transition name="apply" to="isNameEmpty">
+      <action class="example.hello.process.handler.LogActionHandler"/>
+    </transition>
+    <transition name="cancel" to="end"/>
+  </task-node>
+
+  <decision name="isNameEmpty">
+    <!--
+    <handler class="example.hello.process.handler.IsNameEmptyDecisionHandler"/>
+    -->
+    <transition name="yes" to="sayHelloWorld">
+      <condition>#{name == null || name.length == 0}</condition>
+    </transition>
+    <transition name="no" to="doFork">
+      <condition>#{true}</condition>
+    </transition>
+  </decision>
+
+  <node name="sayHelloWorld">
+    <script>
+      <expression>
+        message = new example.hello.dto.MessageDto(null, "Hello, World!");
+        executionContext.leaveNode();
+      </expression>
+      <variable name="message" access="write"/>
+    </script>
+    <transition to="getMessage"/>
+  </node>
+
+  <fork name="doFork">
+    <transition name="1" to="sayHelloForName"/>
+    <transition name="2" to="doAsync"/>
+  </fork>
+
+  <node name="sayHelloForName">
+    <action class="example.hello.process.handler.SayHelloActionHandler"/>
+    <transition to="doJoin"/>
+  </node>
+
+  <!--
+  <node name="doAsync" async="true">
+  -->
+  <node name="doAsync">
+    <!-- 非同期の使い方が不明。 -->
+    <script>
+      System.out.println("Async!!");
+      executionContext.leaveNode();
+    </script>
+    <transition to="doJoin"/>
+  </node>
+
+  <join name="doJoin">
+    <transition to="getMessage"/>
+  </join>
+
+  <task-node name="getMessage">
+    <task name="getMessage">
+      <controller class="example.hello.process.handler.GetMessageTaskControllerHandler" />
+      <assignment class="example.hello.process.handler.GetMessageAssignmentHandler" />
+    </task>
+    <transition name="approve" to="end" />
+    <transition name="return" to="setName" />
+  </task-node>
+
+  <end-state name="end" />
+
+</process-definition>
