@@ -61,6 +61,16 @@
 
   <node name="sayHelloForName">
     <action class="example.hello.process.handler.SayHelloActionHandler"/>
+    <!--
+    <action class="org.seasar.jbpm.graph.handler.GenericActionHandler">
+      <componentName>helloService</componentName>
+      <methodName>sayHello</methodName>
+      <parameterNames>
+        <element>name</element>
+      </parameterNames>
+      <resultName>message</resultName>
+    </action>
+    -->
     <transition to="doJoin"/>
   </node>
 

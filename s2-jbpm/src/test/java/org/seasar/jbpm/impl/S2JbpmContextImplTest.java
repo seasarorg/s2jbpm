@@ -74,7 +74,7 @@ public class S2JbpmContextImplTest extends S2TestCase {
         S2JbpmContextImpl jbpmContext = createS2JbpmContext();
         try {
             ProcessInstance processInstance
-                    = jbpmContext.newProcessInstance("HelloProcess");
+                    = jbpmContext.newProcessInstance("S2JbpmContextImplTest");
             long processInstanceId = processInstance.getId();
             assertSame(processInstance,
                     jbpmContext.getProcessInstance(processInstanceId));
@@ -107,7 +107,7 @@ public class S2JbpmContextImplTest extends S2TestCase {
         S2JbpmContextImpl jbpmContext = createS2JbpmContext();
         try {
             ProcessInstance processInstance
-                    = jbpmContext.newProcessInstance("HelloProcess");
+                    = jbpmContext.newProcessInstance("S2JbpmContextImplTest");
             Token token = processInstance.getRootToken();
             long tokenId = token.getId();
             assertSame(token, jbpmContext.getToken(tokenId));
@@ -132,7 +132,7 @@ public class S2JbpmContextImplTest extends S2TestCase {
         S2JbpmContextImpl jbpmContext = createS2JbpmContext();
         try {
             ProcessInstance processInstance
-                    = jbpmContext.newProcessInstance("HelloProcess");
+                    = jbpmContext.newProcessInstance("S2JbpmContextImplTest");
             assertEquals("start", getCurrentStateName(processInstance));
             assertEquals(0, jbpmContext.getTaskList("hello-01").size());
             

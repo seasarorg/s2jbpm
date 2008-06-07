@@ -54,7 +54,7 @@ public class JbpmTest extends S2TestCase {
     void deployProcessDefinition() {
         log.debug("<<< deployProcessDefinition >>>");
         ProcessDefinition processDefinition = ProcessDefinition.parseXmlString(
-                "<process-definition name='HelloProcess'>" +
+                "<process-definition name='JbpmTest'>" +
                 "  <start-state name='start'>" +
                 "    <transition to='sayHello'/>" +
                 "  </start-state>" +
@@ -81,7 +81,7 @@ public class JbpmTest extends S2TestCase {
         JbpmContext jbpmContext = createJbpmContext();
         try {
             ProcessInstance processInstance
-                    = jbpmContext.newProcessInstance("HelloProcess");
+                    = jbpmContext.newProcessInstance("JbpmTest");
             jbpmContext.save(processInstance);
             assertProcessInstance(jbpmContext, processInstance);
             assertStartState(processInstance);
@@ -142,7 +142,7 @@ public class JbpmTest extends S2TestCase {
     ProcessInstance getHelloProcessInstance(JbpmContext jbpmContext) {
         GraphSession graphSession = jbpmContext.getGraphSession();
         ProcessDefinition processDefinition
-                = graphSession.findLatestProcessDefinition("HelloProcess");
+                = graphSession.findLatestProcessDefinition("JbpmTest");
         List<?> processInstances
                 = graphSession.findProcessInstances(processDefinition.getId());
         return (ProcessInstance) processInstances.get(0);

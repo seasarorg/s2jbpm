@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<process-definition name="HelloProcess">
+<process-definition name="S2JbpmContextImplTest">
   <start-state name="start">
     <transition to="sayHello"/>
   </start-state>
