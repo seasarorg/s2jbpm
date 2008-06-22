@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<!DOCTYPE components PUBLIC
+    "-//SEASAR//DTD S2Container 2.3//EN"
+    "http://www.seasar.org/dtd/components23.dtd">
+<components>
+  <include path="jpa.dicon"/>
+
+  <component class="org.seasar.jbpm.hibernate.jpa.impl.S2SessionFactoryImpl"/>
+
+  <component class="org.seasar.jbpm.impl.S2JbpmConfigurationImpl"/>
+
+</components>

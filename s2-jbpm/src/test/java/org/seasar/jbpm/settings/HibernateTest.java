@@ -3,6 +3,7 @@ package org.seasar.jbpm.settings;
 import org.hibernate.Session;
 import org.jbpm.JbpmContext;
 import org.seasar.hibernate3.impl.S2SessionFactoryImpl;
+import org.seasar.jbpm.impl.S2JbpmConfigurationImpl;
 
 /**
  * S2Hibernate の動作確認。
@@ -11,16 +12,16 @@ import org.seasar.hibernate3.impl.S2SessionFactoryImpl;
  */
 public class HibernateTest extends JbpmTest {
 
+    S2JbpmConfigurationImpl jbpmConfiguration;
+
     S2SessionFactoryImpl sessionFactory;
 
     protected void setUp() throws Exception {
-        include("s2hibernate3.dicon");
+        include("s2jbpm-hibernate.dicon");
     }
 
     protected JbpmContext createJbpmContext() {
-        JbpmContext jbpmContext = super.createJbpmContext();
-        jbpmContext.setSession(getSession());
-        return jbpmContext;
+        return jbpmConfiguration.createJbpmContext();
     }
 
     protected Session getSession() {

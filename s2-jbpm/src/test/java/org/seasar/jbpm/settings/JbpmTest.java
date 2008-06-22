@@ -164,16 +164,16 @@ public class JbpmTest extends S2TestCase {
     void assertProcessDefinition(
             JbpmContext jbpmContext, ProcessDefinition processDefinition) {
         long processDefinitionId = processDefinition.getId();
-        assertSame(processDefinition,
+        assertEquals(processDefinition,
                 load(ProcessDefinition.class, processDefinitionId));
     }
 
     void assertProcessInstance(
             JbpmContext jbpmContext, ProcessInstance processInstance) {
         long processInstanceId = processInstance.getId();
-        assertSame(processInstance, jbpmContext
+        assertEquals(processInstance, jbpmContext
                 .getProcessInstance(processInstanceId));
-        assertSame(processInstance,
+        assertEquals(processInstance,
                 load(ProcessInstance.class, processInstanceId));
     }
 
@@ -192,8 +192,8 @@ public class JbpmTest extends S2TestCase {
     void assertTaskInstance(
             JbpmContext jbpmContext, TaskInstance taskInstance) {
         long taskInstanceId = taskInstance.getId();
-        assertSame(taskInstance, jbpmContext.getTaskInstance(taskInstanceId));
-        assertSame(taskInstance, load(TaskInstance.class, taskInstanceId));
+        assertEquals(taskInstance, jbpmContext.getTaskInstance(taskInstanceId));
+        assertEquals(taskInstance, load(TaskInstance.class, taskInstanceId));
     }
 
     public static void main(String[] args) {

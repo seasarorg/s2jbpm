@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 
 import org.hibernate.Session;
 import org.jbpm.JbpmContext;
+import org.seasar.jbpm.impl.S2JbpmConfigurationImpl;
 
 /**
  * S2Hibernate-JPA の動作確認。
@@ -14,16 +15,16 @@ import org.jbpm.JbpmContext;
  */
 public class JpaTest extends JbpmTest {
 
+    S2JbpmConfigurationImpl jbpmConfiguration;
+
     EntityManager entityManager;
 
     protected void setUp() throws Exception {
-        include("jpa.dicon");
+        include("s2jbpm-jpa.dicon");
     }
 
     protected JbpmContext createJbpmContext() {
-        JbpmContext jbpmContext = super.createJbpmContext();
-        jbpmContext.setSession(getSession());
-        return jbpmContext;
+        return jbpmConfiguration.createJbpmContext();
     }
 
     protected Session getSession() {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<root-container name="HelloProcess" width="561" height="504">
+<root-container name="HelloProcess" width="578" height="504">
   <node name="start" x="157" y="12" width="132" height="36">
     <edge>
       <label x="5" y="-10"/>
@@ -8,20 +8,20 @@
   </node>
   <node name="setName" x="158" y="76" width="132" height="36">
     <edge>
-      <label x="5" y="-10"/>
+      <label x="9" y="-12"/>
     </edge>
     <edge>
-      <label x="5" y="-10"/>
-      <bendpoint w1="-185" h1="1" w2="-232" h2="-388"/>
-      <bendpoint w1="-184" h1="391" w2="-183" h2="0"/>
+      <label x="78" y="-218"/>
+      <bendpoint w1="-185" h1="0" w2="-185" h2="-393"/>
+      <bendpoint w1="-185" h1="391" w2="-183" h2="0"/>
     </edge>
   </node>
   <node name="isNameEmpty" x="157" y="143" width="132" height="36">
     <edge>
-      <label x="5" y="-10"/>
+      <label x="-3" y="-45"/>
     </edge>
     <edge>
-      <label x="5" y="-10"/>
+      <label x="-1" y="-18"/>
     </edge>
   </node>
   <node name="sayHelloWorld" x="72" y="274" width="132" height="36">
@@ -31,10 +31,10 @@
   </node>
   <node name="doFork" x="229" y="211" width="252" height="24">
     <edge>
-      <label x="5" y="-10"/>
+      <label x="-6" y="-19"/>
     </edge>
     <edge>
-      <label x="5" y="-10"/>
+      <label x="2" y="-19"/>
     </edge>
   </node>
   <node name="sayHelloForName" x="222" y="274" width="132" height="36">
@@ -54,12 +54,12 @@
   </node>
   <node name="getMessage" x="157" y="398" width="132" height="36">
     <edge>
-      <label x="5" y="-10"/>
+      <label x="-56" y="-14"/>
     </edge>
     <edge>
-      <label x="5" y="-10"/>
-      <bendpoint w1="303" h1="1" w2="302" h2="323"/>
-      <bendpoint w1="303" h1="-323" w2="302" h2="-1"/>
+      <label x="-229" y="141"/>
+      <bendpoint w1="303" h1="0" w2="302" h2="323"/>
+      <bendpoint w1="303" h1="-323" w2="302" h2="0"/>
     </edge>
   </node>
   <node name="end" x="157" y="467" width="132" height="36"/>

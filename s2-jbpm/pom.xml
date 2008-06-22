@@ -11,6 +11,7 @@
   <version>0.5-SNAPSHOT</version>
 
   <name>S2jBPM</name>
+  <url>http://s2jbpm.sandbox.seasar.org/</url>
   <inceptionYear>2008</inceptionYear>
   <organization>
     <name>The Seasar Foundation</name>
@@ -55,7 +56,7 @@
     <!--
     <repository>
       <id>basedir</id>
-      <url>file://${basedir}/m2_repo</url>
+      <url>file://${basedir}/../m2_repo</url>
     </repository>
     -->
   </repositories>
