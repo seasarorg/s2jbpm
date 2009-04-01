@@ -1,0 +1,4 @@
+#Sun Mar 01 14:10:51 JST 2009
+baseDir=/s2-jbpm-sample/src/main/resources/data
+eclipse.preferences.version=1
+initDB=/s2-jbpm-sample/src/main/resources/data

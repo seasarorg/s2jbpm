@@ -1,0 +1,9 @@
+#Sun Mar 01 14:10:51 JST 2009
+DaoType=S2JDBC
+DefaultResourcePath=/s2-jbpm-sample/src/main/resources
+DefaultRootPackage=org.seasar.jbpm.sample
+DefaultSrcPath=/s2-jbpm-sample/src/main/java
+ServletPath=s2-jbpm-sample
+ViewType=SA-Struts
+WebContentsRoot=src/main/webapp
+eclipse.preferences.version=1
